@@ -26,3 +26,4 @@ class IKCV(object):
             if item.valor > 100:
                 return True
             return False
+            
