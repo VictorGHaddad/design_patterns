@@ -1,7 +1,7 @@
 class Orcamento(object):
-    def __init__(self):
+    def __init__(self, valor):
         self.__itens = []
-    
+        self._valor = valor
     @property
     def valor(self):
         total = 0.0 
