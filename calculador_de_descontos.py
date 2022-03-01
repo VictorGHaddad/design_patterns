@@ -14,13 +14,16 @@ if __name__ == '__main__':
     from orcamento import Orcamento, Item
 
     orcamento = Orcamento()
-    orcamento.adiciona_item(Item('ITEM - 1', 100))
-    orcamento.adiciona_item(Item('ITEM - 2', 50))
-    orcamento.adiciona_item(Item('ITEM - 3', 400))
+    orcamento.adiciona_item(Item('Item A', 100.0))
+    orcamento.adiciona_item(Item('Item B', 50.0))
+    orcamento.adiciona_item(Item('Item C', 400.0))
 
+    orcamento.aplica_desconto_extra() 
+    print(orcamento.valor) # imprime 522.5 porque descontou 5% de 550.0
+    orcamento.aprova()
 
+    orcamento.aplica_desconto_extra() 
+    print(orcamento.valor) # imprime 512.05 porque descontou 2% de 522.5
+    orcamento.finaliza()
 
-    calculador = Calculador_de_descontos()
-    desconto = calculador.calcula(orcamento)
-
-    print('Desconto calculado {}'.format(round(desconto,2)))
+    orcamento.aplica_desconto_extra() # lança exceção, porque não pode aplica desconto em um orçamento finalizado
